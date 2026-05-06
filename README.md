@@ -5,15 +5,16 @@ Homebrew tap for [goojira](https://github.com/roeezolantz/goojira) — a lean cr
 ## Install
 
 ```bash
-brew install --cask --no-quarantine roeezolantz/goojira/goojira
+brew install --cask roeezolantz/goojira/goojira
+xattr -cr /Applications/goojira.app
 ```
 
-The `--no-quarantine` flag is required because pre-1.0 builds aren't yet code-signed. Without it, macOS will refuse to launch the app with a *"goojira is damaged"* error.
+The `xattr -cr` step is required because pre-1.0 builds aren't yet code-signed; without it macOS rejects the app with *"goojira is damaged and can't be opened"*. The command strips the quarantine flag Homebrew applies on install.
 
-If you forget the flag, you can fix it after install:
+Modern Homebrew (5.x) removed the per-install `--no-quarantine` flag. If you'd rather skip the post-install command, set the env var globally:
 
 ```bash
-xattr -cr /Applications/goojira.app
+export HOMEBREW_CASK_OPTS="--no-quarantine"
 ```
 
 ## Update

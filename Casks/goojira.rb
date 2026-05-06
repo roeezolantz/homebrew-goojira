@@ -28,14 +28,11 @@ cask "goojira" do
   caveats <<~EOS
     goojira is not yet code-signed. Homebrew applies a quarantine flag on
     install, which macOS reads as "goojira is damaged and can't be opened".
-    Two options:
+    Clear it after install:
 
-      1. Install with quarantine disabled (one-off):
-           brew install --cask --no-quarantine roeezolantz/goojira/goojira
+      xattr -cr /Applications/goojira.app
 
-      2. Or, after a normal install, clear the flag:
-           xattr -cr /Applications/goojira.app
-
-    Code signing + notarization are on the roadmap.
+    Or set HOMEBREW_CASK_OPTS="--no-quarantine" in your shell to skip
+    the post-install step. Code signing + notarization are on the roadmap.
   EOS
 end
