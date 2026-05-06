@@ -1,6 +1,6 @@
 cask "goojira" do
-  version "0.1.0"
-  sha256 "e94c73f9ad5a1f8f5e08cfbc38951af2aeeeec067890c8b6dcfbf9e84e82e0dc"
+  version "0.1.1"
+  sha256 "207e7f738ce1d8cf4cd7e2f2b0522284abaaa2f40ffceecc6b7aab2c315c0fb0"
 
   url "https://github.com/roeezolantz/goojira/releases/download/v#{version}/goojira-#{version}-arm64.dmg"
   name "goojira"
