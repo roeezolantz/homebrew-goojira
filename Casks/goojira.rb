@@ -2,8 +2,7 @@ cask "goojira" do
   version "0.1.0"
   sha256 "e94c73f9ad5a1f8f5e08cfbc38951af2aeeeec067890c8b6dcfbf9e84e82e0dc"
 
-  url "https://github.com/roeezolantz/goojira/releases/download/v#{version}/goojira-#{version}-arm64.dmg",
-      verified: "github.com/roeezolantz/goojira/"
+  url "https://github.com/roeezolantz/goojira/releases/download/v#{version}/goojira-#{version}-arm64.dmg"
   name "goojira"
   desc "Lean cross-platform menubar/tray companion for Jira"
   homepage "https://github.com/roeezolantz/goojira"
@@ -13,10 +12,9 @@ cask "goojira" do
     strategy :github_latest
   end
 
+  auto_updates true
   depends_on macos: ">= :ventura"
   depends_on arch: :arm64
-
-  auto_updates true
 
   app "goojira.app"
 
